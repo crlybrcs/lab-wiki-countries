@@ -30,3 +30,16 @@
     transform: rotate(360deg);
   }
 }
+
+.td1 {
+  width: 30%;
+}
+
+.col-5 {
+  max-height: 90vh;
+  overflow: scroll;
+}
+
+.td2 {
+  width: 30%;
+}
