@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import countries from "./countries.json";
 import "./App.css";
 import CountryDetail from "./CountryDetail.js";
@@ -25,11 +25,12 @@ const CountryList = props => {
                 {/* list-group-item list-group-item-action */}
                 {countries.map(item => {
                   return (
-                    <div className="list-group-item list-group-item-action">
-                      <Link to={`/${item.cca3}`}>
-                        {item.flag} {item.name.common}
-                      </Link>
-                    </div>
+                    <NavLink
+                      className="list-group-item list-group-item-action"
+                      to={`/${item.cca3}`}
+                    >
+                      {item.flag} {item.name.common}
+                    </NavLink>
                   );
                 })}
               </div>
