@@ -20,11 +20,11 @@ const CountryDetail = props => {
         <thead></thead>
         <tbody>
           <tr>
-            <td>Capital</td>
-            <td className="td2">{country.capital[0]}</td>
+            <td>{country.name.common}</td>
+            <td>{country.capital[0]}</td>
           </tr>
           <tr>
-            <td>Area</td>
+            <td>{country.area}</td>
             <td>
               {country.area * 1000} km
               <sup>2</sup>
@@ -39,7 +39,7 @@ const CountryDetail = props => {
                     return country.cca3 === el;
                   });
                   return (
-                    <li>
+                    <li key={el}>
                       <Link to={`/${el}`}>{reqCountry.name.common}</Link>
                     </li>
                   );

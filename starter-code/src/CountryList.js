@@ -10,22 +10,23 @@ const CountryList = props => {
   return (
     <div>
       <div>
-        <nav class="navbar navbar-dark bg-primary mb-3">
-          <div class="container">
-            <a class="navbar-brand" href="/">
+        <nav className="navbar navbar-dark bg-primary mb-3">
+          <div className="container">
+            <a className="navbar-brand" href="/">
               WikiCountries
             </a>
           </div>
         </nav>
-        <div class="container">
-          <div class="row">
-            <div class="col-5">
-              <div class="list-group">
+        <div className="container">
+          <div className="row">
+            <div className="col-5">
+              <div className="list-group">
                 {/* create a list out of countries.json and use <Link> instead of <a> */}
                 {/* list-group-item list-group-item-action */}
                 {countries.map(item => {
                   return (
                     <NavLink
+                      key={item.cca3}
                       className="list-group-item list-group-item-action"
                       to={`/${item.cca3}`}
                     >
@@ -35,7 +36,7 @@ const CountryList = props => {
                 })}
               </div>
             </div>
-            <div class="col-7">
+            <div className="col-7">
               <Route exact path="/:countryId" component={CountryDetail} />
             </div>
           </div>
